@@ -88,7 +88,12 @@ export function ExpertiseSection() {
                   aria-controls={contentId}
                   className="w-full text-left flex items-start justify-between gap-6 cursor-pointer group focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent"
                 >
-                  <span className="font-heading text-xl sm:text-2xl text-foreground font-normal leading-snug group-hover:text-primary transition-colors">
+                  <span
+                    className={cn(
+                      "font-heading text-xl sm:text-2xl font-normal leading-snug transition-colors group-hover:text-primary",
+                      isOpen ? "text-primary" : "text-foreground",
+                    )}
+                  >
                     {faq.question}
                   </span>
                   <ChevronDown
@@ -99,16 +104,23 @@ export function ExpertiseSection() {
                   />
                 </button>
 
-                {isOpen && (
-                  <div
-                    id={contentId}
-                    role="region"
-                    aria-labelledby={headerId}
-                    className="pt-4 pr-10 text-muted-foreground font-sans text-base font-light leading-relaxed"
-                  >
-                    <p>{faq.answer}</p>
+                <div
+                  id={contentId}
+                  role="region"
+                  aria-labelledby={headerId}
+                  className={cn(
+                    "grid transition-all duration-350 ease-out motion-reduce:transition-none",
+                    isOpen
+                      ? "grid-rows-[1fr] opacity-100"
+                      : "grid-rows-[0fr] opacity-0 pointer-events-none",
+                  )}
+                >
+                  <div className="overflow-hidden">
+                    <div className="pt-4 pr-10 text-muted-foreground font-sans text-base font-light leading-relaxed">
+                      <p>{faq.answer}</p>
+                    </div>
                   </div>
-                )}
+                </div>
               </div>
             );
           })}
