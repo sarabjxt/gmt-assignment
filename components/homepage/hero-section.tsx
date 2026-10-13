@@ -5,12 +5,12 @@ export function HeroSection() {
   return (
     <section
       aria-label="Welcome to Dr. Maya Reynolds Psychology Practice"
-      className="relative w-full bg-background overflow-hidden"
+      className="relative w-full bg-surface-sage overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12 pt-16 pb-20 lg:pt-24 lg:pb-32">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 pt-16 pb-20 lg:pt-20 lg:pb-32">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Column: Quiet, Confident Editorial Content */}
-          <div className="lg:col-span-7 flex flex-col justify-center">
+          <div className="lg:col-span-7 flex flex-col justify-center mx-auto items-center text-center lg:text-left lg:items-start">
             {/* Simple, understated location mark */}
             <p className="font-sans text-xs tracking-[0.18em] uppercase text-accent font-medium mb-6">
               Santa Monica, California · Telehealth Across CA
@@ -37,7 +37,7 @@ export function HeroSection() {
                 nativeButton={false}
                 render={<a href="#contact" />}
               >
-                Schedule a Consultation
+                Schedule a 15-Minute Consultation
               </Button>
             </div>
           </div>
@@ -46,28 +46,25 @@ export function HeroSection() {
           <div className="lg:col-span-5 relative">
             <div className="relative mx-auto max-w-[420px] lg:max-w-none">
               {/* Primary Portrait Card */}
-              <div className="relative aspect-[3/4] w-full rounded-2xl overflow-hidden shadow-lg border border-border/80 bg-muted">
+              <div className="relative aspect-[3/4] w-full rounded-2xl overflow-hidden shadow-xs bg-muted">
                 <Image
                   src="/images/dr-maya-reynolds.png"
                   alt="Dr. Maya Reynolds, PsyD, licensed clinical psychologist in Santa Monica"
                   fill
                   priority
+                  loading="eager"
                   sizes="(max-width: 1024px) 90vw, 40vw"
                   className="object-cover object-top"
                 />
-                <div
-                  className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent pointer-events-none"
-                  aria-hidden="true"
-                />
-                {/* Embedded therapist card tag */}
-                <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-white/95 backdrop-blur-md border border-white/40 shadow-sm">
-                  <p className="font-heading text-lg text-foreground font-normal leading-tight">
-                    Dr. Maya Reynolds, PsyD
-                  </p>
-                  <p className="font-sans text-xs text-muted-foreground mt-0.5">
-                    Licensed Clinical Psychologist · Santa Monica, CA
-                  </p>
-                </div>
+              </div>
+              <div className="pt-4 text-center lg:hidden">
+                <p className="font-heading text-lg sm:text-xl text-foreground font-normal">
+                  Dr. Maya Reynolds, PsyD
+                </p>
+                <p className="font-sans text-sm text-muted-foreground font-light mt-0.5">
+                  Licensed Clinical Psychologist · Santa Monica, CA &amp;
+                  Telehealth Statewide
+                </p>
               </div>
             </div>
           </div>

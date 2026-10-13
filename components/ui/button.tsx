@@ -3,19 +3,18 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "cn";
 
 /**
- * Button component configured for Dr. Maya Reynolds' clinical psychology theme:
  * - primary: Deep Coastal Cypress filled pill button with high contrast & tactile response
  * - secondary: Subtle border/tint pill button
  * - underline: Signature editorial underline action
  * - ghost: Borderless quiet interactive button
  */
 const buttonVariants = cva(
-  "group/button inline-flex shrink-0 items-center justify-center font-sans font-medium text-[0.82rem] tracking-[0.08em] leading-none whitespace-nowrap cursor-pointer select-none outline-none transition-all duration-200 active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+  "group/button inline-flex shrink-0 items-center justify-center font-sans font-medium text-[0.82rem] tracking-[0.08em] leading-none whitespace-nowrap cursor-pointer select-none outline-none transition-all duration-200 focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
   {
     variants: {
       variant: {
         primary:
-          "px-6 py-3.5 rounded-full bg-primary text-primary-foreground shadow-xs hover:bg-primary/92 hover:shadow-md transition-colors",
+          "px-6 py-3.5 rounded-full bg-primary text-primary-foreground hover:bg-primary/92 transition-colors",
         secondary:
           "px-6 py-3.5 rounded-full border border-primary/20 bg-background text-foreground hover:bg-primary/5 hover:border-primary/40 transition-colors",
         outline:

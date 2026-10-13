@@ -37,8 +37,8 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="relative z-40 w-full bg-background/85 backdrop-blur-lg transition-colors">
-      <div className="max-w-7xl mx-auto w-full flex items-center gap-4 px-6 md:px-12 pt-8">
+    <header className="relative z-40 w-full bg-surface-sage backdrop-blur-lg transition-colors">
+      <div className="max-w-7xl mx-auto w-full flex items-center gap-4 px-6 md:px-12 pt-6">
         {/* Brand Logo */}
         <Link
           href="/"
@@ -83,11 +83,11 @@ export function Header() {
         <div className="hidden lg:flex items-center gap-4">
           <Button
             variant="primary"
-            size="sm"
+            size="lg"
             nativeButton={false}
             render={<a href="#contact" />}
           >
-            Schedule a Consultation
+            Book a Consultation
           </Button>
         </div>
 
