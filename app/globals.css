@@ -36,11 +36,11 @@
   --surface-dark: #1e1917; /* Deep roasted espresso charcoal */
 
   /* Typography bindings avoiding circular references */
-  --font-heading: var(--font-source-serif-4), "Source Serif 4", Georgia, serif;
+  /* --font-heading: var(--font-source-serif-4), "Source Serif 4", Georgia, serif;
   --font-serif: var(--font-source-serif-4), "Source Serif 4", Georgia, serif;
   --font-sans:
     var(--font-plus-jakarta), "Plus Jakarta Sans", system-ui, -apple-system,
-    sans-serif;
+    sans-serif; */
 }
 
 @theme inline {
@@ -69,11 +69,8 @@
   --color-surface-sage: var(--surface-sage);
   --color-surface-dark: var(--surface-dark);
 
-  --font-heading: var(--font-source-serif-4), "Source Serif 4", Georgia, serif;
-  --font-serif: var(--font-source-serif-4), "Source Serif 4", Georgia, serif;
-  --font-sans:
-    var(--font-plus-jakarta), "Plus Jakarta Sans", system-ui, -apple-system,
-    sans-serif;
+  --font-heading: var(--font-gilda-display);
+  --font-sans: var(--font-plus-jakarta-sans);
 }
 
 body {

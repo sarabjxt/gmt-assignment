@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
-import { Source_Serif_4, Plus_Jakarta_Sans } from "next/font/google";
+import { Gilda_Display, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
-const sourceSerif4 = Source_Serif_4({
-  variable: "--font-source-serif-4",
+const gildaDisplay = Gilda_Display({
+  variable: "--font-gilda-display",
   subsets: ["latin"],
   display: "swap",
-  style: ["normal", "italic"],
+  weight: ["400"],
 });
 
 const plusJakartaSans = Plus_Jakarta_Sans({
-  variable: "--font-plus-jakarta",
+  variable: "--font-plus-jakarta-sans",
   subsets: ["latin"],
   display: "swap",
 });
@@ -48,7 +48,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${sourceSerif4.variable} ${plusJakartaSans.variable} h-full scroll-smooth antialiased`}
+      className={`${gildaDisplay.variable} ${plusJakartaSans.variable} h-full scroll-smooth antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground font-sans selection:bg-accent/20 selection:text-foreground">
         {children}
