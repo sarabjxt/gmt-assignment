@@ -36,6 +36,16 @@ export function HeroSection() {
                 size="lg"
                 nativeButton={false}
                 render={<a href="#contact" />}
+                className="sm:hidden"
+              >
+                Book a Consultation
+              </Button>
+              <Button
+                variant="primary"
+                size="lg"
+                nativeButton={false}
+                render={<a href="#contact" />}
+                className="hidden sm:block"
               >
                 Schedule a 15-Minute Consultation
               </Button>

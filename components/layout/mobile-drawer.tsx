@@ -150,7 +150,7 @@ export function MobileDrawer({
               nativeButton={false}
               render={<Link href={contactHref} onClick={onClose} />}
             >
-              Schedule a Consultation
+              Book a Consultation
             </Button>
           </div>
         </div>
