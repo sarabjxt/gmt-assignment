@@ -1,21 +1,32 @@
-import Image from "next/image";
 import { cn } from "cn";
 
-const ratio = 3.4246575342; // width/height ratio
-
-function Logo({ size = 75, className }: { className?: string; size?: number }) {
-  return (
-    <Image
-      src="/logo.png"
-      width={size * ratio}
-      height={size}
-      alt="Conejo Valley Family Counseling"
-      loading="eager"
-      fetchPriority="high"
-      decoding="async"
-      className={cn("h-auto", className)}
-    />
-  );
+interface LogoProps {
+  className?: string;
+  light?: boolean;
 }
 
-export { Logo };
+export function Logo({ className, light = false }: LogoProps) {
+  return (
+    <div
+      className={cn("inline-flex flex-col text-left select-none", className)}
+    >
+      <span
+        className={cn(
+          "font-heading text-[1.4rem] md:text-[1.5rem] font-normal tracking-tight leading-none",
+          light ? "text-white" : "text-foreground",
+        )}
+      >
+        Dr. Maya Reynolds,{" "}
+        <span className="text-[0.9em] font-light opacity-90">PsyD</span>
+      </span>
+      <span
+        className={cn(
+          "font-sans text-[0.65rem] font-medium tracking-[0.16em] uppercase mt-1.5",
+          light ? "text-white/65" : "text-accent",
+        )}
+      >
+        Clinical Psychology
+      </span>
+    </div>
+  );
+}

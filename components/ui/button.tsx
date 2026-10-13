@@ -3,32 +3,37 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "cn";
 
 /**
- * Variants:
- * - primary / underline: The signature editorial underline button with sliding hover animation
- * - secondary / outline: Pill/oval outline button (e.g. Header Contact, Book now)
- * - solid: Filled pill button inverted on hover
- * - accent: Sage/teal pill accent button
- * - ghost: Borderless minimal text button
- *
- * Sizes:
- * - sm: Compact
- * - default: Standard medium (0.85rem, 0.12em tracking, 1.3rem/1rem padding for pills, 0.6rem for underline)
- * - lg: Prominent (0.95rem, 2rem/1.25rem padding for pills, 0.8rem for underline)
+ * Button component configured for Dr. Maya Reynolds' clinical psychology theme:
+ * - primary: Deep Coastal Cypress filled pill button with high contrast & tactile response
+ * - secondary: Subtle border/tint pill button
+ * - underline: Signature editorial underline action
+ * - ghost: Borderless quiet interactive button
  */
 const buttonVariants = cva(
-  "group/button inline-flex shrink-0 items-center justify-center font-sans font-normal uppercase text-[0.8rem] tracking-[0.12em] leading-[1.2em] whitespace-nowrap cursor-pointer select-none outline-none transition-all ease-linear duration-100 focus-visible:ring-1 focus-visible:ring-foreground disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+  "group/button inline-flex shrink-0 items-center justify-center font-sans font-medium text-[0.82rem] tracking-[0.08em] leading-none whitespace-nowrap cursor-pointer select-none outline-none transition-all duration-200 active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
   {
     variants: {
       variant: {
-        // Signature underline action button (e.g. "Book an Appointment", "Learn more about us")
         primary:
-          "px-[1.22rem] py-[0.95rem] rounded-[100%] border border-foreground bg-transparent text-foreground hover:bg-foreground hover:text-background transition-colors duration-100",
+          "px-6 py-3.5 rounded-full bg-primary text-primary-foreground shadow-xs hover:bg-primary/92 hover:shadow-md transition-colors",
+        secondary:
+          "px-6 py-3.5 rounded-full border border-primary/20 bg-background text-foreground hover:bg-primary/5 hover:border-primary/40 transition-colors",
+        outline:
+          "px-5 py-3 rounded-full border border-border bg-transparent text-foreground hover:bg-secondary transition-colors",
         underline:
-          "relative bg-transparent text-foreground py-[0.56rem] border-none rounded-none before:content-[''] before:absolute before:right-0 before:bottom-0 before:left-0 before:border-b before:border-border before:transition-[right] before:duration-1000 hover:before:right-full hover:bg-transparent hover:opacity-100",
+          "relative bg-transparent text-foreground py-2 border-none rounded-none before:content-[''] before:absolute before:right-0 before:bottom-0 before:left-0 before:border-b-2 before:border-accent before:transition-all before:duration-300 hover:before:left-0 hover:text-accent font-medium",
+        ghost:
+          "px-4 py-2 rounded-full text-foreground hover:bg-secondary hover:text-foreground transition-colors",
+      },
+      size: {
+        sm: "text-[0.82rem] px-4 py-2.5",
+        default: "text-[0.82rem] px-6 py-3.5",
+        lg: "text-[0.9rem] px-8 py-4",
       },
     },
     defaultVariants: {
       variant: "primary",
+      size: "default",
     },
   },
 );
@@ -36,12 +41,13 @@ const buttonVariants = cva(
 function Button({
   className,
   variant = "primary",
+  size = "default",
   ...props
 }: ButtonPrimitive.Props & VariantProps<typeof buttonVariants>) {
   return (
     <ButtonPrimitive
       data-slot="button"
-      className={cn(buttonVariants({ variant, className }))}
+      className={cn(buttonVariants({ variant, size, className }))}
       {...props}
     />
   );

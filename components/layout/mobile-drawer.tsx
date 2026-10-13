@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useState, useEffect, useCallback } from "react";
 import { cn } from "cn";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export interface MobileFolder {
   id: string;
@@ -78,23 +77,7 @@ export function MobileDrawer({
     }
   }, [isOpen, handleKeyDown]);
 
-  const [currentFolder, setCurrentFolder] = useState<MobileFolder | null>(
-    () => folders.find((f) => f.id === activeFolderId) ?? null,
-  );
-  const [prevActiveFolderId, setPrevActiveFolderId] = useState(activeFolderId);
 
-  if (activeFolderId !== prevActiveFolderId) {
-    setPrevActiveFolderId(activeFolderId);
-    if (activeFolderId !== null) {
-      const match = folders.find((f) => f.id === activeFolderId) ?? null;
-      if (match) {
-        setCurrentFolder(match);
-      }
-    }
-  }
-
-  const displayedFolder =
-    folders.find((f) => f.id === activeFolderId) ?? currentFolder;
 
   return (
     <div
@@ -102,7 +85,7 @@ export function MobileDrawer({
       aria-modal="true"
       aria-label="Mobile Navigation"
       className={cn(
-        "absolute top-full left-0 right-0 w-full h-[calc(100vh-100%)] h-[calc(100dvh-100%)] bg-hero-section z-40 flex flex-col justify-between transition-all duration-300 ease-in-out lg:hidden overflow-hidden",
+        "absolute top-full left-0 right-0 w-full h-[calc(100vh-100%)] h-[calc(100dvh-100%)] bg-background border-b border-border z-40 flex flex-col justify-between transition-all duration-300 ease-in-out lg:hidden overflow-hidden",
         isOpen
           ? "opacity-100 translate-y-0 pointer-events-auto visible"
           : "opacity-0 translate-y-4 pointer-events-none invisible",
@@ -129,7 +112,7 @@ export function MobileDrawer({
                 <Link
                   href={link.href}
                   onClick={onClose}
-                  className="inline-block font-sans text-[6.6vmin] m-[5vw] font-normal uppercase leading-none tracking-wide text-foreground"
+                  className="inline-block font-heading text-[5.5vmin] m-[3.5vw] font-light leading-none tracking-tight text-foreground hover:text-accent transition-colors"
                 >
                   {link.title}
                 </Link>
@@ -141,15 +124,9 @@ export function MobileDrawer({
                 <button
                   type="button"
                   onClick={() => setActiveFolderId(folder.id)}
-                  className="flex font-sans text-[6.6vmin] m-[5vw] font-normal uppercase leading-none tracking-wide text-foreground cursor-pointer bg-transparent border-none p-0 text-left"
+                  className="flex items-center justify-between font-heading text-[5.5vmin] m-[3.5vw] font-light leading-none tracking-tight text-foreground cursor-pointer bg-transparent border-none p-0 text-left hover:text-accent transition-colors"
                 >
                   {folder.title}
-                  <span className="ml-0.5 -mt-1.5 size-[6.6vmin]">
-                    <ChevronRight
-                      strokeWidth={0.5}
-                      className="size-[8vmin] shrink-0 opacity-80"
-                    />
-                  </span>
                 </button>
               </div>
             ))}
@@ -159,7 +136,7 @@ export function MobileDrawer({
                 <Link
                   href={link.href}
                   onClick={onClose}
-                  className="inline-block font-sans text-[6.6vmin] m-[5vw] font-normal uppercase leading-none tracking-wide text-foreground"
+                  className="inline-block font-heading text-[5.5vmin] m-[3.5vw] font-light leading-none tracking-tight text-foreground hover:text-accent transition-colors"
                 >
                   {link.title}
                 </Link>
@@ -168,60 +145,16 @@ export function MobileDrawer({
           </div>
 
           {/* Bottom CTA Button */}
-          <div className="px-[5vw] pb-[6vw] pt-4">
+          <div className="px-[5vw] pb-[6vw] pt-6">
             <Button
               variant="primary"
-              className="min-w-[210px]"
+              className="w-full"
               nativeButton={false}
               render={<Link href={contactHref} onClick={onClose} />}
             >
-              Contact
+              Schedule a Consultation
             </Button>
           </div>
-        </div>
-
-        {/* Subfolder list */}
-        <div
-          className={cn(
-            "absolute inset-0 flex flex-col justify-center transition-transform duration-600 ease-[cubic-bezier(0.4,0,0.2,1)] will-change-transform overflow-y-auto pb-6",
-            activeFolderId !== null
-              ? "translate-x-0 pointer-events-auto"
-              : "translate-x-full pointer-events-none",
-          )}
-        >
-          {displayedFolder ? (
-            <div className="flex flex-col overflow-y-auto">
-              <div className="px-[5vw]">
-                <button
-                  type="button"
-                  onClick={() => setActiveFolderId(null)}
-                  className="inline-flex items-center gap-1.5 font-sans text-[6.6vmin] uppercase tracking-wide text-foreground/50 cursor-pointer bg-transparent border-none p-0 m-[5vw] text-left"
-                >
-                  <span className="mr-1 -mt-3.5 size-[6.6vmin]">
-                    <ChevronLeft
-                      strokeWidth={0.5}
-                      className="size-[8vmin] shrink-0 opacity-80"
-                    />
-                  </span>
-                  <span>Back</span>
-                </button>
-              </div>
-
-              <div className="flex flex-col mx-[5vw]">
-                {displayedFolder.links.map((link) => (
-                  <div key={link.title}>
-                    <Link
-                      href={link.href}
-                      onClick={onClose}
-                      className="inline-block font-sans text-[6.6vmin] m-[5vw] font-normal uppercase leading-none tracking-wide text-foreground"
-                    >
-                      {link.title}
-                    </Link>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ) : null}
         </div>
       </div>
     </div>

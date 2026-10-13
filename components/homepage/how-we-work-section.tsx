@@ -1,82 +1,69 @@
-import Image from "next/image";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
+const modalities = [
+  {
+    name: "Cognitive-Behavioral Therapy (CBT)",
+    subtitle: "Practical Cognitive Tools",
+    description:
+      "Identifies the mental patterns, catastrophic projections, and perfectionistic standards that drive chronic stress—building actionable tools to interrupt anxious cycles in daily life.",
+  },
+  {
+    name: "EMDR Therapy",
+    subtitle: "Trauma Memory Reprocessing",
+    description:
+      "An extensively researched modality that allows the brain to reprocess unresolved and distressing memories. Rather than endlessly talking through the past, EMDR relieves the emotional charge stored in your nervous system.",
+  },
+  {
+    name: "Mindfulness-Based Practices",
+    subtitle: "Present-Moment Centering",
+    description:
+      "Cultivates non-judgmental awareness to help you observe internal sensations and thoughts without being hijacked by them, breaking compulsive overthinking and mental fatigue.",
+  },
+  {
+    name: "Body-Oriented & Somatic Work",
+    subtitle: "Nervous System Regulation",
+    description:
+      "Stress and trauma live directly in the physical body. We integrate somatic techniques that soften muscular tension, regulate breathing, and help your autonomic nervous system step out of fight-or-flight.",
+  },
+];
 
 export function HowWeWorkSection() {
   return (
     <section
-      aria-label="How We Work"
-      className="relative w-full bg-warm-accent overflow-x-clip"
+      id="approach"
+      aria-label="Therapeutic Approach & Evidence-Based Modalities"
+      className="relative w-full bg-background py-24 lg:py-36 overflow-hidden"
     >
-      <div className="work-fluid-grid w-full">
-        {/* Eyebrow Label */}
-        <div className="work-block-eyebrow flex items-center">
-          <p className="font-sans font-normal uppercase tracking-[0.12em] text-[0.85rem] md:text-[0.94rem] text-foreground leading-[1.8em]">
-            HOW WE WORK
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
+        {/* Section Header */}
+        <div className="max-w-3xl mb-16 lg:mb-24">
+          <p className="font-sans text-xs tracking-[0.18em] uppercase text-accent font-medium mb-4">
+            Therapeutic Modalities
           </p>
-        </div>
-
-        {/* Section Heading */}
-        <div className="work-block-heading flex items-start">
-          <h2 className="font-heading font-light text-foreground text-h2">
-            We’re here to make a difference.
+          <h2 className="font-heading font-light text-foreground text-h2 mb-6">
+            Integrating evidence-based science with{" "}
+            <span className="italic text-primary">relational depth</span>.
           </h2>
-        </div>
-
-        {/* Right Feature Image - Counseling Team */}
-        <div className="work-block-image relative w-full h-full min-h-[304px] md:min-h-0 overflow-hidden">
-          <Image
-            src="/images/make-difference.jpg"
-            alt="Counseling team in office"
-            fill
-            sizes="(max-width: 768px) 88vw, 30vw"
-            className="object-cover object-center"
-          />
-          <div
-            className="absolute inset-0 bg-warm-accent/15 pointer-events-none"
-            aria-hidden="true"
-          />
-        </div>
-
-        {/* Left Column Text */}
-        <div className="work-block-body-left flex flex-col justify-start">
-          <p className="font-sans font-normal uppercase tracking-[0.12em] text-[0.85rem] md:text-[0.94rem] text-foreground leading-[1.8em] mb-4">
-            The clients we work with are balancing so many things at once, it’s
-            often hard for them to put themselves first.
-          </p>
-          <p className="font-sans font-light text-foreground text-[1.02rem] leading-[1.8]">
-            Here, your needs are always top priority. Our team takes the time to
-            deeply listen to our clients in order to truly understand their
-            story and their struggles. We recognize that no two people are the
-            same and that personalized therapy means an intentional, tailored
-            approach. (You won’t find anything “one-size-fits-all” here.) If
-            you’re ready to do the work, we’re ready to help.
+          <p className="font-sans text-base sm:text-lg text-muted-foreground font-light leading-relaxed">
+            Every person&apos;s nervous system is unique. Therapy is not a rigid
+            formula—it is a thoughtful integration of proven clinical methods
+            paced to ensure you always feel grounded and secure.
           </p>
         </div>
 
-        {/* Right Column Text */}
-        <div className="work-block-body-right flex flex-col justify-start">
-          <p className="font-sans font-light text-foreground text-[1.02rem] leading-[1.8]">
-            Sometimes we may gently challenge you to look at things differently
-            and other times we may explore your emotions, all while encouraging
-            you to practice what you’ve learned in your daily life. We take what
-            we do seriously because we know how important it is for you to heal
-            from what’s hurting you, discover a fulfilling life, and build
-            meaning relationships. Our goal is to walk alongside you in this
-            journey, offering support and guidance as you uncover your strengths
-            and embrace what the future can hold for you.
-          </p>
-        </div>
-
-        {/* CTA Button */}
-        <div className="work-block-button flex items-center">
-          <Button
-            variant="underline"
-            nativeButton={false}
-            render={<Link href="/therapists-newbury-park" />}
-          >
-            Learn more about us
-          </Button>
+        {/* 4 Modalities (Clean 2-Column Editorial Grid with Hairline Dividers) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12 pt-10 border-t border-border/50">
+          {modalities.map((item) => (
+            <div key={item.name} className="flex flex-col justify-start">
+              <span className="font-sans text-xs tracking-wider uppercase text-accent font-medium mb-2">
+                {item.subtitle}
+              </span>
+              <h3 className="font-heading font-normal text-foreground text-h3 mb-3">
+                {item.name}
+              </h3>
+              <p className="font-sans text-sm sm:text-base text-muted-foreground font-light leading-relaxed">
+                {item.description}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

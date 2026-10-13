@@ -1,110 +1,39 @@
-"use client";
-
 import Image from "next/image";
-import { useEffect, useRef } from "react";
 
 export function StoryQuoteSection() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const imageWrapperRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const section = sectionRef.current;
-    const imageWrapper = imageWrapperRef.current;
-    if (!section || !imageWrapper) return;
-
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      return;
-    }
-
-    let rafId: number | null = null;
-    let isIntersecting = false;
-
-    const updateParallax = () => {
-      if (!isIntersecting || !section || !imageWrapper) return;
-
-      const rect = section.getBoundingClientRect();
-      const viewportHeight = window.innerHeight;
-
-      // Distance from section center to viewport center
-      const sectionCenter = rect.top + rect.height / 2;
-      const viewportCenter = viewportHeight / 2;
-      const distance = sectionCenter - viewportCenter;
-
-      // Subtle parallax factor (0.05) for a gentle, elegant touch
-      const translateY = distance * 0.05;
-
-      imageWrapper.style.transform = `translate3d(0, ${translateY.toFixed(2)}px, 0)`;
-      rafId = null;
-    };
-
-    const requestUpdate = () => {
-      if (rafId === null && isIntersecting) {
-        rafId = window.requestAnimationFrame(updateParallax);
-      }
-    };
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        isIntersecting = entry.isIntersecting;
-        if (isIntersecting) {
-          requestUpdate();
-        }
-      },
-      { rootMargin: "150px 0px 150px 0px" },
-    );
-
-    observer.observe(section);
-
-    window.addEventListener("scroll", requestUpdate, { passive: true });
-    window.addEventListener("resize", requestUpdate, { passive: true });
-
-    requestUpdate();
-
-    return () => {
-      observer.disconnect();
-      window.removeEventListener("scroll", requestUpdate);
-      window.removeEventListener("resize", requestUpdate);
-      if (rafId !== null) {
-        window.cancelAnimationFrame(rafId);
-      }
-    };
-  }, []);
-
   return (
     <section
-      ref={sectionRef}
-      aria-label="Story and Healing Quote"
-      className="relative w-full bg-[#111111] overflow-hidden min-h-[66vh] py-[7vmax]"
+      aria-label="Therapeutic Philosophy Quote"
+      className="relative w-full bg-accent py-24 lg:py-36 border-t border-b border-border/40 overflow-hidden"
     >
-      {/* Botanical Background Image with Parallax & Dark Overlay */}
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <div
-          ref={imageWrapperRef}
-          className="absolute -top-[15%] -bottom-[15%] left-0 right-0 h-[130%] w-full will-change-transform"
-        >
-          <Image
-            src="/images/story-plant.png"
-            alt="Botanical background illustration"
-            fill
-            sizes="100vw"
-            className="object-cover object-center"
-          />
-        </div>
-        <div
-          className="absolute inset-0 bg-foreground opacity-54 pointer-events-none"
-          aria-hidden="true"
-        />
-      </div>
+      <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-12 text-center">
+        <p className="font-sans text-xs font-medium uppercase tracking-[0.2em] text-accent-foreground mb-8">
+          Core Therapeutic Philosophy
+        </p>
 
-      <div className="story-fluid-grid relative z-10 w-full">
-        <div className="story-block-quote flex items-end justify-start">
-          <h2 className="font-heading font-light whitespace-pre-wrap text-light-accent text-h2">
-            You deserve a place where your story is heard, valued, and
-            understood.{" "}
-            <em className="font-heading font-light italic">
-              Nothing will be too heavy for us to carry together.
-            </em>
-          </h2>
+        <blockquote className="font-heading font-light text-accent-foreground text-h2 mb-10">
+          &ldquo;Therapy works best when you feel deeply respected, understood,
+          and actively involved in the process. My goal is not just symptom
+          relief, but helping you develop lasting insight, resilience, and a
+          stronger, kinder relationship with yourself.&rdquo;
+        </blockquote>
+
+        <div className="flex flex-col items-center justify-center">
+          <div className="size-14 rounded-full overflow-hidden border border-border/80 mb-3 shadow-xs">
+            <Image
+              src="/images/dr-maya-reynolds.png"
+              alt="Dr. Maya Reynolds, PsyD"
+              width={56}
+              height={56}
+              className="object-cover object-top size-full"
+            />
+          </div>
+          <cite className="not-italic font-heading text-lg text-background font-normal">
+            Dr. Maya Reynolds, PsyD
+          </cite>
+          <span className="font-sans text-xs text-muted font-light tracking-wide mt-0.5">
+            Licensed Clinical Psychologist · Santa Monica, CA
+          </span>
         </div>
       </div>
     </section>

@@ -1,116 +1,84 @@
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-
 export function SpecialtiesSection() {
   return (
     <section
-      aria-label="Our Specialties"
-      className="relative w-full bg-background overflow-x-clip py-[6vmax]"
+      id="services"
+      aria-label="Therapy Services & Specialties in Santa Monica"
+      className="relative w-full bg-surface-sage py-24 lg:py-36"
     >
-      <div className="specialties-fluid-grid w-full">
-        {/* Section Heading */}
-        <div className="spec-block-title flex items-center">
-          <h3 className="font-heading font-light text-foreground text-h3">
-            Our &nbsp;
-            <span className="font-script text-dark-accent font-normal not-italic text-[1em]">
-              specialties
-            </span>
-            &nbsp; include…
-          </h3>
-        </div>
-
-        {/* Specialty 1: Trauma */}
-        <div className="spec-block-1-text flex flex-col justify-start">
-          <h4 className="font-heading font-light text-[1.4rem] md:text-[1.6rem] text-foreground mb-6">
-            Trauma
-          </h4>
-          <p className="font-sans font-light text-foreground text-[0.98rem] leading-[1.8]">
-            We don’t always know when and how we’ve experienced trauma. In
-            therapy, we’ll work together to help you process your past,
-            understand what’s causing you to stay “stuck,” and regain a sense of
-            safety, control, and hope. You don’t have to carry your burdens
-            alone.
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
+        {/* Section Header */}
+        <div className="max-w-3xl mb-16 lg:mb-24">
+          <p className="font-sans text-xs tracking-[0.18em] uppercase text-accent font-medium mb-4">
+            Areas of Focus
+          </p>
+          <h2 className="font-heading font-light text-foreground text-h2 mb-6">
+            Paced, evidence-based care tailored to{" "}
+            <span className="italic text-primary">your needs</span>.
+          </h2>
+          <p className="font-sans text-base sm:text-lg text-muted-foreground font-light leading-relaxed">
+            I specialize in three core areas where anxiety, unresolved trauma,
+            and professional burnout intersect—integrating practical tools with
+            depth-oriented psychological healing.
           </p>
         </div>
-        <div className="spec-block-1-btn flex items-center">
-          <Button
-            variant="underline"
-            nativeButton={false}
-            render={<Link href="/trauma-counseling-newbury-park" />}
-          >
-            Learn more
-          </Button>
-        </div>
 
-        {/* Specialty 2: Dissociation */}
-        <div className="spec-block-2-text flex flex-col justify-start">
-          <h4 className="font-heading font-light text-[1.4rem] md:text-[1.6rem] text-foreground mb-6">
-            Dissociation
-          </h4>
-          <p className="font-sans font-light text-foreground text-[0.98rem] leading-[1.8]">
-            The feeling of losing time, hearing conflicting voices, or
-            questioning your sense of self can be overwhelming. In therapy,
-            we’ll help you understand these experiences, recognize your own
-            triggers, and create a sense of balance and identity so that you can
-            feel more grounded.
-          </p>
-        </div>
-        <div className="spec-block-2-btn flex items-center">
-          <Button
-            variant="underline"
-            nativeButton={false}
-            render={
-              <Link href="/dissociative-identity-disorder-therapist-newbury-park" />
-            }
-          >
-            Learn more
-          </Button>
-        </div>
+        {/* 3 Spacious Editorial Columns (No SaaS cards, no mono tags, pure breathing room) */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16 pt-10 border-t border-border/50">
+          {/* Specialty 1 */}
+          <div className="flex flex-col justify-between">
+            <div>
+              <h3 className="font-heading font-normal text-foreground text-h3 mb-4">
+                Anxiety, Panic &amp; Constant Worry
+              </h3>
+              <p className="font-sans text-sm sm:text-base text-muted-foreground font-light leading-relaxed mb-6">
+                For adults quietly struggling with constant worry, tight chest,
+                difficulty sleeping, and the feeling that you are perpetually
+                bracing for something to go wrong. Together, we demystify the
+                panic cycle using CBT and somatic calming tools to help your
+                nervous system step out of fight-or-flight.
+              </p>
+            </div>
+            <p className="font-sans text-xs text-accent font-medium tracking-wide">
+              CBT · Somatic Grounding · Nervous System Relief
+            </p>
+          </div>
 
-        {/* Specialty 3: EMDR */}
-        <div className="spec-block-3-text flex flex-col justify-start">
-          <h4 className="font-heading font-light text-[1.4rem] md:text-[1.6rem] text-foreground mb-6">
-            EMDR
-          </h4>
-          <p className="font-sans font-light text-foreground text-[0.98rem] leading-[1.8]">
-            Eye Movement Desensitization and Reprocessing (EMDR) is a powerful
-            therapeutic technique that helps process and heal trauma by
-            reworking how painful memories are stored in your brain. This allows
-            you to find relief and move toward lasting healing.
-          </p>
-        </div>
-        <div className="spec-block-3-btn flex items-center">
-          <Button
-            variant="underline"
-            nativeButton={false}
-            render={<Link href="/emdr-therapy-newbury-park" />}
-          >
-            Learn more
-          </Button>
-        </div>
+          {/* Specialty 2 */}
+          <div className="flex flex-col justify-between">
+            <div>
+              <h3 className="font-heading font-normal text-foreground text-h3 mb-4">
+                Trauma &amp; EMDR Therapy
+              </h3>
+              <p className="font-sans text-sm sm:text-base text-muted-foreground font-light leading-relaxed mb-6">
+                Whether working through single-incident trauma or complex,
+                long-standing patterns from childhood and past relationships,
+                our work is paced with deep care. We use EMDR to safely
+                reprocess distressing memories so they no longer disrupt your
+                present life.
+              </p>
+            </div>
+            <p className="font-sans text-xs text-accent font-medium tracking-wide">
+              EMDR · Safety First · Stabilization &amp; Reprocessing
+            </p>
+          </div>
 
-        {/* Specialty 4: Special Needs Parenting */}
-        <div className="spec-block-4-text flex flex-col justify-start">
-          <h4 className="font-heading font-light text-[1.4rem] md:text-[1.6rem] text-foreground mb-6">
-            Special Needs Parenting
-          </h4>
-          <p className="font-sans font-light text-foreground text-[0.98rem] leading-[1.8]">
-            Parenting a child with special needs presents unique challenges and
-            complex emotions. We provide compassionate support through lived
-            experience and expertise to help you navigate this journey with
-            tools, understanding, and self-care.
-          </p>
-        </div>
-        <div className="spec-block-4-btn flex items-center">
-          <Button
-            variant="underline"
-            nativeButton={false}
-            render={
-              <Link href="/counseling-special-needs-parents-newbury-park" />
-            }
-          >
-            Learn more
-          </Button>
+          {/* Specialty 3 */}
+          <div className="flex flex-col justify-between">
+            <div>
+              <h3 className="font-heading font-normal text-foreground text-h3 mb-4">
+                Burnout &amp; High-Pressure Support
+              </h3>
+              <p className="font-sans text-sm sm:text-base text-muted-foreground font-light leading-relaxed mb-6">
+                For entrepreneurs, creatives, and executives exhausted by years
+                of pushing through stress and high internal expectations.
+                Therapy provides a dedicated space to slow down, dismantle harsh
+                perfectionism, and build a sustainable rhythm for your life.
+              </p>
+            </div>
+            <p className="font-sans text-xs text-accent font-medium tracking-wide">
+              Perfectionism · Sustainable Living · Identity Reconnection
+            </p>
+          </div>
         </div>
       </div>
     </section>

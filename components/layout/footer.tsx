@@ -1,148 +1,138 @@
 import Link from "next/link";
 import { Logo } from "@/components/logo";
 
-const navigateLinks = [
-  { title: "Home", href: "/" },
-  { title: "About", href: "/therapists-newbury-park" },
-  { title: "FAQs", href: "/faqs" },
-  { title: "Contact", href: "/contact" },
+const navigationLinks = [
+  { title: "About Dr. Maya", href: "#about" },
+  { title: "Services & Specialties", href: "#services" },
+  { title: "Approach & Modalities", href: "#approach" },
+  { title: "Santa Monica Office", href: "#office" },
+  { title: "Frequently Asked Questions", href: "#faqs" },
+  { title: "Schedule a Consultation", href: "#contact" },
 ];
 
-const teamLinks = [
-  { title: "Jennifer Anderson", href: "/jennifer-anderson" },
-  { title: "Heather Williams-Baumgart", href: "/heather-williams-baumgart" },
-  { title: "Autumn Bodily", href: "/autumn-bodily" },
-  { title: "Candace Bletscher", href: "/candace-bletscher" },
-  { title: "Samantha Johnson", href: "/samantha-johnson" },
-  { title: "Rosa Gomez", href: "/rosa-gomez" },
-  { title: "Chad Flores", href: "/chad-flores" },
-  { title: "Simran Sidhu", href: "/simran-sidhu" },
-  { title: "Jessica Jauregui", href: "/jessica-jauregui" },
+const specialtiesLinks = [
+  { title: "Anxiety & Panic Therapy", href: "#services" },
+  { title: "Trauma & EMDR Therapy", href: "#services" },
+  { title: "Executive & Creative Burnout", href: "#services" },
+  { title: "Body-Oriented Somatic Work", href: "#approach" },
+  { title: "Cognitive Behavioral Therapy (CBT)", href: "#approach" },
+  { title: "Mindfulness-Based Stabilization", href: "#approach" },
 ];
 
 export function Footer() {
   return (
-    <footer className="w-full">
+    <footer className="w-full bg-surface-warm text-foreground border-t border-border/40">
       {/* Upper Main Footer */}
-      <div className="w-full bg-background overflow-x-clip py-[5vmax]">
-        <div className="footer-fluid-grid w-full">
-          {/* Brand Logo */}
-          <div className="footer-block-logo flex items-start">
-            <Link href="/" aria-label="Conejo Valley Family Counseling Home">
-              <Logo size={90} className="w-full h-auto" />
+      <div className="max-w-7xl mx-auto px-6 md:px-12 py-16 lg:py-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-12">
+          {/* Brand & Mission Column */}
+          <div className="lg:col-span-5 flex flex-col justify-start">
+            <Link
+              href="/"
+              aria-label="Dr. Maya Reynolds, PsyD - Home"
+              className="inline-block mb-6 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent rounded-sm"
+            >
+              <Logo />
             </Link>
+            <p className="font-sans text-sm sm:text-base text-muted-foreground leading-relaxed max-w-[32ch] mb-6 font-light">
+              Grounded, collaborative therapy for adults navigating anxiety,
+              panic, trauma, and high-pressure burnout. Combining evidence-based
+              tools with depth-oriented care.
+            </p>
+            <div className="text-muted-foreground/80 text-xs font-light space-y-1">
+              <p>Licensed Clinical Psychologist · State of California</p>
+              <p>
+                In-person sessions in Santa Monica &amp; California telehealth
+              </p>
+            </div>
           </div>
 
-          {/* Practice Description */}
-          <div className="footer-block-desc flex flex-col justify-start px-[6%]">
-            <p className="font-sans font-light text-foreground text-[1.05rem] leading-[1.8]">
-              We want to make getting started simple. You’re welcome to come
-              into our office in Newbury Park or schedule virtual appointments
-              from anywhere in CA—whatever works best for you.
-            </p>
-          </div>
-
-          {/* Navigate Column */}
-          <div className="footer-block-navigate flex flex-col justify-start">
-            <p className="font-sans font-normal uppercase tracking-[0.12em] text-[0.85rem] md:text-[0.94rem] leading-[1.8em] text-foreground mb-3">
-              Navigate
-            </p>
+          {/* Quick Links Column */}
+          <div className="lg:col-span-2 flex flex-col justify-start">
+            <h4 className="font-sans text-xs uppercase tracking-[0.18em] text-accent font-medium mb-5">
+              Explore
+            </h4>
             <nav
               aria-label="Footer Navigation"
-              className="flex flex-col gap-1.5"
+              className="flex flex-col gap-2.5"
             >
-              {navigateLinks.map((link) => (
-                <Link
+              {navigationLinks.map((link) => (
+                <a
                   key={link.title}
                   href={link.href}
-                  className="font-sans font-light text-[0.92rem] text-foreground hover:opacity-70 transition-opacity leading-[1.8]"
+                  className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors font-light"
                 >
                   {link.title}
-                </Link>
+                </a>
               ))}
             </nav>
           </div>
 
-          {/* Our Team Column */}
-          <div className="footer-block-team flex flex-col justify-start">
-            <p className="font-sans font-normal uppercase tracking-[0.12em] text-[0.85rem] md:text-[0.94rem] leading-[1.8em] text-foreground mb-3">
-              Our Team
-            </p>
-            <nav aria-label="Our Team Links" className="flex flex-col gap-1.5">
-              {teamLinks.map((member) => (
-                <Link
-                  key={member.title}
-                  href={member.href}
-                  className="font-sans font-light text-[0.92rem] text-foreground hover:opacity-70 transition-opacity leading-[1.8]"
+          {/* Specialties Column */}
+          <div className="lg:col-span-2 flex flex-col justify-start">
+            <h4 className="font-sans text-xs uppercase tracking-[0.18em] text-accent font-medium mb-5">
+              Specialties
+            </h4>
+            <nav
+              aria-label="Specialties Links"
+              className="flex flex-col gap-2.5"
+            >
+              {specialtiesLinks.map((item) => (
+                <a
+                  key={item.title}
+                  href={item.href}
+                  className="font-sans text-sm text-muted-foreground hover:text-foreground transition-colors font-light"
                 >
-                  {member.title}
-                </Link>
+                  {item.title}
+                </a>
               ))}
             </nav>
           </div>
 
-          {/* Contact Column */}
-          <div className="footer-block-contact flex flex-col justify-start">
-            <p className="font-sans font-normal uppercase tracking-[0.12em] text-[0.85rem] md:text-[0.94rem] leading-[1.8em] text-foreground mb-3">
-              Contact
-            </p>
-            <div className="font-sans font-light text-[0.92rem] text-foreground leading-[1.8] flex flex-col gap-3">
-              <p>
-                925 Broadbeck Dr
+          {/* Practice Location & Contact */}
+          <div className="lg:col-span-3 flex flex-col justify-start">
+            <h4 className="font-sans text-xs uppercase tracking-[0.18em] text-accent font-medium mb-5">
+              Practice Setting
+            </h4>
+            <div className="font-sans text-sm text-muted-foreground leading-relaxed flex flex-col gap-2.5 font-light">
+              <address className="not-italic">
+                <span className="font-normal text-foreground block mb-0.5">
+                  Santa Monica Office
+                </span>
+                123th Street 45 W
                 <br />
-                Suites 200 and 225
-                <br />
-                Newbury Park, CA 91320
-                <br />
-                <a
-                  href="mailto:info@conejovalleycounseling.com"
-                  className="hover:opacity-70 transition-opacity"
-                >
-                  info@conejovalleycounseling.com
-                </a>
+                Santa Monica, CA 90401
+              </address>
+              <p className="text-xs text-muted-foreground/80 pt-1">
+                Quiet, sunlit space near the coast. Serving Santa Monica,
+                Venice, Brentwood, and statewide via secure California
+                telehealth.
               </p>
-              <p>
-                <a
-                  href="tel:8052423120"
-                  className="hover:opacity-70 transition-opacity"
-                >
-                  805.242.3120
-                </a>
-              </p>
-              <em className="text-[0.92rem] pt-1">
-                Serving Thousand Oaks, Westlake Village, Camarillo, Moorpark,
-                &amp; Simi Valley
-              </em>
             </div>
           </div>
         </div>
       </div>
 
       {/* Bottom Legal / Disclaimer Bar */}
-      <div className="w-full bg-dark-accent text-white py-3 px-[6vw] lg:px-[5vw]">
-        <div className="max-w-[1800px] mx-auto flex items-center justify-start text-[0.9rem] font-sans font-light">
-          <p className="whitespace-pre-wrap leading-relaxed">
-            <Link href="/terms" className="hover:underline">
-              Terms
-            </Link>
-            {" | "}
-            <Link href="/privacy-policy" className="hover:underline">
-              Privacy Policy
-            </Link>
-            {" | "}
-            <Link href="/disclaimer" className="hover:underline">
-              Disclaimer
-            </Link>
-            {" | Website by "}
-            <a
-              href="https://walkerstrategyco.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:underline"
-            >
-              Walker Strategy Co.
-            </a>
+      <div className="w-full border-t border-border/50 py-6 px-6 lg:px-12">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between text-xs text-muted-foreground font-light gap-4">
+          <p>
+            &copy; {new Date().getFullYear()} Dr. Maya Reynolds, PsyD. All
+            rights reserved.
           </p>
+          <div className="flex items-center gap-4">
+            <a href="#" className="hover:text-foreground transition-colors">
+              Privacy Policy
+            </a>
+            <span>·</span>
+            <a href="#" className="hover:text-foreground transition-colors">
+              Terms of Service
+            </a>
+            <span>·</span>
+            <a href="#" className="hover:text-foreground transition-colors">
+              Good Faith Estimate
+            </a>
+          </div>
         </div>
       </div>
     </footer>
