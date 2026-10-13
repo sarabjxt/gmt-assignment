@@ -13,7 +13,7 @@ export function SpecialtiesSection() {
           </p>
           <h2 className="font-heading font-light text-foreground text-h2 mb-6">
             Paced, evidence-based care tailored to{" "}
-            <span className="italic text-primary">your needs</span>.
+            <span className="text-primary">your needs</span>.
           </h2>
           <p className="font-sans text-base sm:text-lg text-muted-foreground font-light leading-relaxed">
             I specialize in three core areas where anxiety, unresolved trauma,
@@ -76,7 +76,7 @@ export function SpecialtiesSection() {
               </p>
             </div>
             <p className="font-sans text-xs text-accent font-medium tracking-wide">
-              Perfectionism · Sustainable Living · Identity Reconnection
+              Perfectionism · Identity Reconnection
             </p>
           </div>
         </div>

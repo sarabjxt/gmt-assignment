@@ -77,8 +77,6 @@ export function MobileDrawer({
     }
   }, [isOpen, handleKeyDown]);
 
-
-
   return (
     <div
       role="dialog"
@@ -100,7 +98,7 @@ export function MobileDrawer({
         {/* Root navigation list */}
         <div
           className={cn(
-            "absolute inset-0 flex flex-col justify-center px-[5vw] transition-transform duration-600 ease-[cubic-bezier(0.4,0,0.2,1)] will-change-transform overflow-y-auto py-6",
+            "absolute inset-0 flex flex-col px-[5vw] transition-transform duration-600 ease-[cubic-bezier(0.4,0,0.2,1)] will-change-transform overflow-y-auto py-6",
             activeFolderId === null
               ? "translate-x-0 pointer-events-auto"
               : "-translate-x-full pointer-events-none",

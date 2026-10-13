@@ -28,7 +28,7 @@ export function TherapistCtaSection() {
 
             <h2 className="font-heading font-light text-foreground text-h2 mb-6">
               Take the first step toward feeling{" "}
-              <span className="italic text-primary">grounded again</span>.
+              <span className="text-primary">grounded again</span>.
             </h2>
 
             <p className="font-sans text-base sm:text-lg text-muted-foreground font-light leading-relaxed mb-8 max-w-[50ch]">
@@ -93,7 +93,7 @@ export function TherapistCtaSection() {
 
           {/* Right Column: Clean, Frictionless Consultation Form */}
           <div className="lg:col-span-6">
-            <div className="p-8 sm:p-10 rounded-2xl bg-surface-warm border border-border/70 shadow-xs">
+            <div className="p-8 sm:p-10 rounded-2xl bg-surface-warm border border-border/70">
               <h3 className="font-heading font-normal text-foreground text-h3 mb-2">
                 Request a Consultation
               </h3>

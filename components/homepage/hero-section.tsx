@@ -17,13 +17,13 @@ export function HeroSection() {
             </p>
 
             {/* H1 Headline */}
-            <h1 className="font-heading font-light text-foreground text-h1 mb-6">
+            <h1 className="font-heading font-normal text-foreground text-h1 mb-6">
               Therapy for adults who feel functional on the outside,{" "}
-              <span className="italic text-primary">yet exhausted within</span>.
+              <span className="text-primary">yet exhausted within</span>.
             </h1>
 
             {/* Subtext: warm, unhurried, spacious */}
-            <p className="font-sans text-base sm:text-lg text-muted-foreground font-normal leading-relaxed max-w-[52ch] mb-10">
+            <p className="font-sans text-base sm:text-lg text-muted-foreground font-light leading-relaxed max-w-[52ch] mb-10">
               Grounded, evidence-based care for anxiety, trauma, and
               high-pressure burnout. Combining practical tools with deep
               emotional healing in a quiet Santa Monica sanctuary.
@@ -46,7 +46,7 @@ export function HeroSection() {
           <div className="lg:col-span-5 relative">
             <div className="relative mx-auto max-w-[420px] lg:max-w-none">
               {/* Primary Portrait Card */}
-              <div className="relative aspect-[3/4] w-full rounded-2xl overflow-hidden shadow-xl border border-border/80 bg-muted">
+              <div className="relative aspect-[3/4] w-full rounded-2xl overflow-hidden shadow-lg border border-border/80 bg-muted">
                 <Image
                   src="/images/dr-maya-reynolds.png"
                   alt="Dr. Maya Reynolds, PsyD, licensed clinical psychologist in Santa Monica"

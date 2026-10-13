@@ -40,7 +40,7 @@ export function HowWeWorkSection() {
           </p>
           <h2 className="font-heading font-light text-foreground text-h2 mb-6">
             Integrating evidence-based science with{" "}
-            <span className="italic text-primary">relational depth</span>.
+            <span className="text-primary">relational depth</span>.
           </h2>
           <p className="font-sans text-base sm:text-lg text-muted-foreground font-light leading-relaxed">
             Every person&apos;s nervous system is unique. Therapy is not a rigid
@@ -53,10 +53,10 @@ export function HowWeWorkSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12 pt-10 border-t border-border/50">
           {modalities.map((item) => (
             <div key={item.name} className="flex flex-col justify-start">
-              <span className="font-sans text-xs tracking-wider uppercase text-accent font-medium mb-2">
+              <span className="font-sans text-xs tracking-wider uppercase text-accent font-medium mb-3">
                 {item.subtitle}
               </span>
-              <h3 className="font-heading font-normal text-foreground text-h3 mb-3">
+              <h3 className="font-heading font-normal text-foreground text-h3 mb-4">
                 {item.name}
               </h3>
               <p className="font-sans text-sm sm:text-base text-muted-foreground font-light leading-relaxed">

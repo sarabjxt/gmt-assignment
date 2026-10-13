@@ -15,10 +15,7 @@ export function JourneySection() {
           </p>
           <h2 className="font-heading font-light text-foreground text-h2 mb-6">
             A quiet sanctuary in Santa Monica,{" "}
-            <span className="italic text-primary">
-              and virtual across California
-            </span>
-            .
+            <span className="text-primary">and virtual across California</span>.
           </h2>
           <p className="font-sans text-base sm:text-lg text-muted-foreground font-light leading-relaxed">
             The environment of therapy matters. My office is an intentionally
@@ -41,7 +38,7 @@ export function JourneySection() {
         {/* Two Quiet Location Explanations (Editorial 2-Column Split) */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 pt-8 border-t border-border/50">
           <div>
-            <h3 className="font-heading font-normal text-foreground text-h3 mb-3">
+            <h3 className="font-heading font-normal text-foreground text-h3 mb-4">
               In-Person in Santa Monica
             </h3>
             <p className="font-sans text-sm sm:text-base text-muted-foreground font-light leading-relaxed mb-4">
@@ -56,7 +53,7 @@ export function JourneySection() {
           </div>
 
           <div>
-            <h3 className="font-heading font-normal text-foreground text-h3 mb-3">
+            <h3 className="font-heading font-normal text-foreground text-h3 mb-4">
               Statewide California Telehealth
             </h3>
             <p className="font-sans text-sm sm:text-base text-muted-foreground font-light leading-relaxed mb-4">

@@ -33,7 +33,7 @@ export function WhoWeHelpSection() {
 
             <h2 className="font-heading font-light text-foreground text-h2 mb-8">
               A collaborative space to slow down, reflect, and{" "}
-              <span className="italic text-primary">reconnect</span>.
+              <span className="text-primary">reconnect</span>.
             </h2>
 
             <div className="space-y-6 font-sans text-base sm:text-lg text-muted-foreground font-light leading-relaxed max-w-[56ch]">

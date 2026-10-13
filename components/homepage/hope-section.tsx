@@ -12,7 +12,7 @@ export function HopeSection() {
           </p>
           <h2 className="font-heading font-light text-foreground text-h2 mb-6">
             When being functional on the outside isn&apos;t the same as{" "}
-            <span className="italic text-primary">feeling at peace</span>.
+            <span className="text-primary">feeling at peace</span>.
           </h2>
           <p className="font-sans text-base sm:text-lg text-muted-foreground font-light leading-relaxed">
             Many adults who come to my Santa Monica practice are thoughtful,
@@ -25,7 +25,7 @@ export function HopeSection() {
         {/* 3 Spacious Reflection Columns (No SaaS checkboxes, pure editorial breathing room) */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16 pt-8 border-t border-border/50">
           <div>
-            <span className="font-heading text-lg text-foreground font-normal block mb-3">
+            <span className="font-heading text-xl text-foreground font-normal block mb-3">
               Internal Pressure &amp; Overthinking
             </span>
             <p className="font-sans text-sm sm:text-base text-muted-foreground font-light leading-relaxed">
@@ -36,7 +36,7 @@ export function HopeSection() {
           </div>
 
           <div>
-            <span className="font-heading text-lg text-foreground font-normal block mb-3">
+            <span className="font-heading text-xl text-foreground font-normal block mb-3">
               Somatic &amp; Physical Tension
             </span>
             <p className="font-sans text-sm sm:text-base text-muted-foreground font-light leading-relaxed">
@@ -47,7 +47,7 @@ export function HopeSection() {
           </div>
 
           <div>
-            <span className="font-heading text-lg text-foreground font-normal block mb-3">
+            <span className="font-heading text-xl text-foreground font-normal block mb-3">
               The Weight of Past Experiences
             </span>
             <p className="font-sans text-sm sm:text-base text-muted-foreground font-light leading-relaxed">
