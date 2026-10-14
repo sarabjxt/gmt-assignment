@@ -11,7 +11,7 @@ export function WhoWeHelpSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20 items-center">
           {/* Left Column: Authentic Sunlit Office Imagery */}
           <div className="lg:col-span-5 order-2 lg:order-1">
-            <div className="relative md:aspect-[4/5] max-h-[600px] w-full rounded-2xl overflow-hidden shadow-sm bg-secondary/30">
+            <div className="relative aspect-[3/2] max-h-[600px] w-full rounded-2xl overflow-hidden shadow-sm bg-secondary/30">
               <Image
                 src="/images/office-2.jpg"
                 alt="Dr. Maya Reynolds serene Santa Monica office with natural sunlight and plants"

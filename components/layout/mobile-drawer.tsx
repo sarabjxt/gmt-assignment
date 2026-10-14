@@ -83,7 +83,7 @@ export function MobileDrawer({
       aria-modal="true"
       aria-label="Mobile Navigation"
       className={cn(
-        "absolute top-full left-0 right-0 w-full h-[calc(100vh-100%)] h-[calc(100dvh-100%)] bg-surface-sage border-b border-border z-40 flex flex-col justify-between transition-all duration-300 ease-in-out lg:hidden overflow-hidden",
+        "absolute top-full left-0 right-0 w-full h-[calc(100vh-100%)] h-[calc(100dvh-100%)] bg-surface-sage z-40 flex flex-col justify-between transition-all duration-300 ease-in-out lg:hidden overflow-hidden",
         isOpen
           ? "opacity-100 translate-y-0 pointer-events-auto visible"
           : "opacity-0 translate-y-4 pointer-events-none invisible",
@@ -98,19 +98,19 @@ export function MobileDrawer({
         {/* Root navigation list */}
         <div
           className={cn(
-            "absolute inset-0 flex flex-col px-[5vw] transition-transform duration-600 ease-[cubic-bezier(0.4,0,0.2,1)] will-change-transform overflow-y-auto py-6",
+            "absolute inset-0 flex flex-col px-[5vw] justify-between transition-transform duration-600 ease-[cubic-bezier(0.4,0,0.2,1)] will-change-transform overflow-y-auto py-6",
             activeFolderId === null
               ? "translate-x-0 pointer-events-auto"
               : "-translate-x-full pointer-events-none",
           )}
         >
-          <div className="flex flex-col mt-[1vw]">
+          <div className="flex flex-col my-auto">
             {singleLinksTop.map((link) => (
               <div key={link.title}>
                 <Link
                   href={link.href}
                   onClick={onClose}
-                  className="inline-block font-heading text-[5.5vmin] m-[3.5vw] font-light leading-none tracking-tight text-foreground hover:text-accent transition-colors"
+                  className="inline-block font-heading text-[10vmin] sm:text-[6vmin] m-[5.5vw] sm:m-[3.5vw] font-light leading-none tracking-tight text-foreground hover:text-accent transition-colors"
                 >
                   {link.title}
                 </Link>
@@ -122,7 +122,7 @@ export function MobileDrawer({
                 <button
                   type="button"
                   onClick={() => setActiveFolderId(folder.id)}
-                  className="flex items-center justify-between font-heading text-[5.5vmin] m-[3.5vw] font-light leading-none tracking-tight text-foreground cursor-pointer bg-transparent border-none p-0 text-left hover:text-accent transition-colors"
+                  className="flex items-center justify-between font-heading text-[10vmin] sm:text-[6vmin] m-[5.5vw] sm:m-[3.5vw] font-light leading-none tracking-tight text-foreground cursor-pointer bg-transparent border-none p-0 text-left hover:text-accent transition-colors"
                 >
                   {folder.title}
                 </button>
@@ -134,7 +134,7 @@ export function MobileDrawer({
                 <Link
                   href={link.href}
                   onClick={onClose}
-                  className="inline-block font-heading text-[5.5vmin] m-[3.5vw] font-light leading-none tracking-tight text-foreground hover:text-accent transition-colors"
+                  className="inline-block font-heading text-[10vmin] sm:text-[6vmin] m-[5.5vw] sm:m-[3.5vw] font-light leading-none tracking-tight text-foreground hover:text-accent transition-colors"
                 >
                   {link.title}
                 </Link>
@@ -145,6 +145,7 @@ export function MobileDrawer({
           {/* Bottom CTA Button */}
           <div className="px-[5vw] pb-[6vw] pt-6">
             <Button
+              size="lg"
               variant="primary"
               className="w-full"
               nativeButton={false}

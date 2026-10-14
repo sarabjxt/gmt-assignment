@@ -7,10 +7,10 @@ export function HeroSection() {
       aria-label="Welcome to Dr. Maya Reynolds Psychology Practice"
       className="relative w-full bg-surface-sage overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12 pt-16 pb-20 lg:pt-20 lg:pb-32">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 pt-20 pb-20 lg:pb-32">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Column: Quiet, Confident Editorial Content */}
-          <div className="lg:col-span-7 flex flex-col justify-center mx-auto items-center text-center lg:text-left lg:items-start">
+          <div className="lg:col-span-7 flex flex-col justify-center mx-auto sm:items-center sm:text-center lg:text-left lg:items-start">
             {/* Simple, understated location mark */}
             <p className="font-sans text-xs tracking-[0.18em] uppercase text-accent font-medium mb-6">
               Santa Monica, California · Telehealth Across CA

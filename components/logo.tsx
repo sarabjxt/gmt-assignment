@@ -12,7 +12,7 @@ export function Logo({ className, light = false }: LogoProps) {
     >
       <span
         className={cn(
-          "font-heading text-[1.4rem] sm:text-[1.5rem] font-normal tracking-tight leading-none",
+          "font-heading text-[1.5rem] sm:text-[1.5rem] font-normal tracking-tight leading-none",
           light ? "text-white" : "text-foreground",
         )}
       >

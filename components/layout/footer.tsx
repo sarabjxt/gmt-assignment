@@ -21,7 +21,7 @@ const specialtiesLinks = [
 
 export function Footer() {
   return (
-    <footer className="w-full bg-surface-warm text-foreground border-t border-border/40">
+    <footer className="w-full bg-surface-warm text-foreground">
       {/* Upper Main Footer */}
       <div className="max-w-7xl mx-auto px-6 md:px-12 py-16 lg:py-24">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-12">
@@ -120,7 +120,7 @@ export function Footer() {
             &copy; {new Date().getFullYear()} Dr. Maya Reynolds, PsyD. All
             rights reserved.
           </p>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 sm:gap-4">
             <a href="#" className="hover:text-foreground transition-colors">
               Privacy Policy
             </a>

@@ -6,7 +6,7 @@ export function HopeSection() {
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Top Centered Editorial Narrative */}
-        <div className="max-w-3xl mx-auto text-center mb-16 md:mb-24">
+        <div className="max-w-3xl mx-auto sm:text-center mb-16 md:mb-24">
           <p className="font-sans text-xs tracking-[0.18em] uppercase text-accent font-medium mb-4">
             A Familiar Pattern
           </p>
